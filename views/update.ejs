@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <!--<p>Welcome to <%= title %></p>   -->      
+
+     
+
+  <form action="http://localhost:4000/" method="POST">
+    <label>Name</label>
+    <input type="text" id="name" name="name" value="<%= data.name%>"/>
+    <label>Category</label>
+    <input type="text" id="category" name="category" value="<%= data.category%>"/>
+    <label>Longitude</label>
+    <input type="text" id="longitide" name="longitude" value="<%= data.location.coordinates[0]%>"/>
+    <label>Latitide</label>
+    <input type="text" id="latitude" name="latitude" value="<%= data.location.coordinates[1]%>"/>
+    <input type="submit" value="Submit"/>
+    </form>
+  </body>
+</html>

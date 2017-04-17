@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>   
+       
+
+     <ul>
+      <% for(var i=0; i<data.length; i++) {%>
+        <li>
+          <span><%= data[i].name %></span>
+          <span><%= data[i].category %></span>
+          <span><%= data[i].location.coordinates[0] %></span>
+          <span><%= data[i].location.coordinates[1] %></span>
+          <!--<a href="../update?q=<%=data[i]%>">Edit</a> -->
+          <span><a href="/update/12?_method=PUT&param=<%=data[i].name%>" >Edit</a></span>
+          <span><a href="/delete/12?_method=DELETE&param=<%=data[i].name%>" >Delete</a></span>
+        </li>
+      <% } %>
+  </ul>
+  <br/>
+<h4>
+  Add Record
+</h4>
+  <form action="http://localhost:4000/" method="POST">
+    <label>Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter Name"/>
+    <label>Category</label>
+    <input type="text" id="category" name="category" placeholder="Enter Name"/>
+    <label>Longitude</label>
+    <input type="text" id="longitide" name="longitude" placeholder="Enter Name"/>
+    <label>Latitide</label>
+    <input type="text" id="latitude" name="latitude" placeholder="Enter Name"/>
+    <input type="submit" value="Submit"/>
+    </form>
+  </body>
+</html>
